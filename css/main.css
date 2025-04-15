@@ -864,49 +864,116 @@ select {
 
 /* button style  */
 
-.btn {
-  position: relative;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #9a2018;
-  background: none;
-  border: 2px solid #cf6666;
-  /* border-radius: 8px; */
+button {
+  margin: 20px;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
   cursor: pointer;
-  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn {
+background: linear-gradient(0deg, rgba(196,28,28,1) 0%, rgba(251,75,2,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+
+.btn span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn::before,
+.btn::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
   transition: all 0.3s ease;
 }
 
-.liquid {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  transition: color 0.3s ease;
+.btn::before{
+   height: 0%;
+   width: 2px;
 }
 
-.btn::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  /* Start with no height */
-  background: #9a2018;
-  z-index: -1;
-  transition: height 0.3s ease, bottom 0.3s ease;
+.btn::after {
+  width: 0%;
+  height: 2px;
+}
+
+.btn:hover{
+  color: rgba(196,28,28,1);
+  background: transparent;
 }
 
 .btn:hover::before {
   height: 100%;
-  /* Fill the button height */
-  bottom: 0;
 }
 
-.liquid:hover {
-  color: #efefef;
-  /* Change text color on hover */
+.btn:hover::after {
+  width: 100%;
+}
+
+.btn span::before,
+.btn span::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: rgba(196,28,28,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+}
+
+.btn span::before {
+  width: 2px;
+  height: 0%;
+}
+
+.btn span::after {
+  height: 2px;
+  width: 0%;
+}
+
+.btn span:hover::before {
+  height: 100%;
+}
+
+.btn span:hover::after {
+  width: 100%;
+}
+
+#reservation-form button {
+  left:240px !important;
 }
 
 /* desktop style  */
@@ -1585,47 +1652,6 @@ details[open] summary {
   background-color: rgb(196, 28, 28);
 }
 
-.btn-desk {
-  position: relative;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #9a2018;
-  background: none;
-  border: 2px solid #cf6666;
-  /* border-radius: 8px; */
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.liquid-desk {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.btn-desk::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  /* Start with no height */
-  background: #9a2018;
-  z-index: -1;
-  transition: height 0.3s ease, bottom 0.3s ease;
-}
-
-.btn-desk:hover::before {
-  height: 100%;
-  /* Fill the button height */
-  bottom: 0;
-}
-
-.liquid-desk:hover {
-  color: #efefef;
-  /* Change text color on hover */
+#contact-form button {
+  left:240px !important;
 }
